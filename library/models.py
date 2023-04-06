@@ -6,7 +6,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
-
+from django.conf import settings
 
 class Categories(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -15,7 +15,7 @@ class Categories(models.Model):
     updated_at = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = settings.MANAGE_MODELS
         db_table = 'categories'
 
 
@@ -26,7 +26,7 @@ class Ranges(models.Model):
     updated_at = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = settings.MANAGE_MODELS
         db_table = 'ranges'
 
 
@@ -37,7 +37,7 @@ class BookRange(models.Model):
     range = models.ForeignKey('Ranges', models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = settings.MANAGE_MODELS
         db_table = 'book_range'
 
 
@@ -57,7 +57,7 @@ class Books(models.Model):
     ranges = models.ManyToManyField('Ranges', through="BookRange")
 
     class Meta:
-        managed = False
+        managed = settings.MANAGE_MODELS
         db_table = 'books'
 
 
@@ -70,7 +70,7 @@ class Editors(models.Model):
     book = models.OneToOneField('Books', models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = settings.MANAGE_MODELS
         db_table = 'editors'
 
 
@@ -84,7 +84,7 @@ class Comments(models.Model):
     user = models.ForeignKey('Users', models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = settings.MANAGE_MODELS
         db_table = 'comments'
 
 
@@ -97,7 +97,7 @@ class Advertisements(models.Model):
     book = models.OneToOneField('Books', models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = settings.MANAGE_MODELS
         db_table = 'advertisements'
 
 
@@ -110,7 +110,7 @@ class Movies(models.Model):
     book = models.ForeignKey(Books, models.SET_NULL, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = settings.MANAGE_MODELS
         db_table = 'movies'
 
 
@@ -130,7 +130,7 @@ class Users(models.Model):
     author = models.ForeignKey('Authors', models.SET_NULL, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = settings.MANAGE_MODELS
         db_table = 'users'
 
 
@@ -142,7 +142,7 @@ class Authors(models.Model):
     book = models.ForeignKey('Books', models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = settings.MANAGE_MODELS
         db_table = 'authors'
 
 
@@ -158,7 +158,7 @@ class Bookstores(models.Model):
     company = models.ForeignKey('Companies', models.DO_NOTHING)
 
     class Meta:
-        managed = False
+        managed = settings.MANAGE_MODELS
         db_table = 'bookstores'
 
 
@@ -171,7 +171,7 @@ class Companies(models.Model):
     book = models.ForeignKey('Books', models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = settings.MANAGE_MODELS
         db_table = 'companies'
 
 
@@ -185,7 +185,7 @@ class Buys(models.Model):
     updated_at = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = settings.MANAGE_MODELS
         db_table = 'buys'
 
 
@@ -199,7 +199,7 @@ class Buyables(models.Model):
     buy = models.ForeignKey('Buys', models.DO_NOTHING)
 
     class Meta:
-        managed = False
+        managed = settings.MANAGE_MODELS
         db_table = 'buyables'
 
 
@@ -219,7 +219,7 @@ class Buyables(models.Model):
 #     user = models.ForeignKey('Users', models.DO_NOTHING)
 
 #     class Meta:
-#         managed = False
+#         managed = settings.MANAGE_MODELS
 #         db_table = 'products'
 
 
@@ -234,7 +234,7 @@ class Buyables(models.Model):
 #     taggable_id = models.BigIntegerField()
 
 #     class Meta:
-#         managed = False
+#         managed = settings.MANAGE_MODELS
 #         db_table = 'tags'
 
 
@@ -249,11 +249,11 @@ class Buyables(models.Model):
 #     sequelable_id = models.BigIntegerField(blank=True, null=True)
 
 #     class Meta:
-#         managed = False
+#         managed = settings.MANAGE_MODELS
 #         db_table = 'sequels'
 
 
-# dunno
+# # #####" dunno
 
 # class Images(models.Model):
 #     id = models.BigAutoField(primary_key=True)
@@ -265,7 +265,7 @@ class Buyables(models.Model):
 #     updated_at = models.DateTimeField(blank=True, null=True)
 
 #     class Meta:
-#         managed = False
+#         managed = settings.MANAGE_MODELS
 #         db_table = 'images'
 
 
@@ -275,7 +275,7 @@ class Buyables(models.Model):
 #     created_at = models.DateTimeField(blank=True, null=True)
 
 #     class Meta:
-#         managed = False
+#         managed = settings.MANAGE_MODELS
 #         db_table = 'password_resets'
 
 
@@ -291,7 +291,7 @@ class Buyables(models.Model):
 #     updated_at = models.DateTimeField(blank=True, null=True)
 
 #     class Meta:
-#         managed = False
+#         managed = settings.MANAGE_MODELS
 #         db_table = 'personal_access_tokens'
 
 
@@ -300,7 +300,7 @@ class Buyables(models.Model):
 #     batch = models.IntegerField()
 
 #     class Meta:
-#         managed = False
+#         managed = settings.MANAGE_MODELS
 #         db_table = 'migrations'
 
 
@@ -314,5 +314,5 @@ class Buyables(models.Model):
 #     failed_at = models.DateTimeField()
 
 #     class Meta:
-#         managed = False
+#         managed = settings.MANAGE_MODELS
 #         db_table = 'failed_jobs'

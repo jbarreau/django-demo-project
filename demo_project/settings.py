@@ -96,6 +96,8 @@ DATABASES = {
     },
 }
 
+MANAGE_MODELS=os.environ.get('MANAGE_MODELS', 'False').lower() == 'true'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
