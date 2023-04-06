@@ -1,0 +1,2783 @@
+{
+  "collections": [
+    {
+      "name": "categories",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "books_set",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "books.id",
+          "inverse_of": "category",
+          "relationship": "HasMany",
+          "widget": null
+        },
+        {
+          "field": "id",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is greater than",
+              "message": "Ensure this value is greater than or equal to -9223372036854775808 characters",
+              "value": -9223372036854775808
+            },
+            {
+              "type": "is less than",
+              "message": "Ensure this value is less than or equal to 9223372036854775807 characters",
+              "value": 9223372036854775807
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "label",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 255 characters",
+              "value": 255
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "created_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "updated_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "ranges",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "bookrange_set",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "book_range.id",
+          "inverse_of": "range",
+          "relationship": "HasMany",
+          "widget": null
+        },
+        {
+          "field": "books_set",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "books.id",
+          "inverse_of": "ranges",
+          "relationship": "HasMany",
+          "widget": null
+        },
+        {
+          "field": "id",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is greater than",
+              "message": "Ensure this value is greater than or equal to -9223372036854775808 characters",
+              "value": -9223372036854775808
+            },
+            {
+              "type": "is less than",
+              "message": "Ensure this value is less than or equal to 9223372036854775807 characters",
+              "value": 9223372036854775807
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "label",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 255 characters",
+              "value": 255
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "created_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "updated_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "book_range",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "id",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is greater than",
+              "message": "Ensure this value is greater than or equal to -9223372036854775808 characters",
+              "value": -9223372036854775808
+            },
+            {
+              "type": "is less than",
+              "message": "Ensure this value is less than or equal to 9223372036854775807 characters",
+              "value": 9223372036854775807
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "book",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "books.id",
+          "inverse_of": "bookrange_set",
+          "relationship": "BelongsTo",
+          "widget": null
+        },
+        {
+          "field": "range",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "ranges.id",
+          "inverse_of": "bookrange_set",
+          "relationship": "BelongsTo",
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "books",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "bookrange_set",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "book_range.id",
+          "inverse_of": "book",
+          "relationship": "HasMany",
+          "widget": null
+        },
+        {
+          "field": "editors",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "editors.id",
+          "inverse_of": "book",
+          "relationship": "HasOne",
+          "widget": null
+        },
+        {
+          "field": "comments_set",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "comments.id",
+          "inverse_of": "book",
+          "relationship": "HasMany",
+          "widget": null
+        },
+        {
+          "field": "advertisements",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "advertisements.id",
+          "inverse_of": "book",
+          "relationship": "HasOne",
+          "widget": null
+        },
+        {
+          "field": "movies_set",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "movies.id",
+          "inverse_of": "book",
+          "relationship": "HasMany",
+          "widget": null
+        },
+        {
+          "field": "authors_set",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "authors.id",
+          "inverse_of": "book",
+          "relationship": "HasMany",
+          "widget": null
+        },
+        {
+          "field": "companies_set",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "companies.id",
+          "inverse_of": "book",
+          "relationship": "HasMany",
+          "widget": null
+        },
+        {
+          "field": "id",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is greater than",
+              "message": "Ensure this value is greater than or equal to -9223372036854775808 characters",
+              "value": -9223372036854775808
+            },
+            {
+              "type": "is less than",
+              "message": "Ensure this value is less than or equal to 9223372036854775807 characters",
+              "value": 9223372036854775807
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "label",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 255 characters",
+              "value": 255
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "comment",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "difficulty",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 255 characters",
+              "value": 255
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "amount",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "active",
+          "type": "Boolean",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "options",
+          "type": "Json",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "other",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 255 characters",
+              "value": 255
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "created_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "updated_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "category",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "categories.id",
+          "inverse_of": "books_set",
+          "relationship": "BelongsTo",
+          "widget": null
+        },
+        {
+          "field": "ranges",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "ranges.id",
+          "inverse_of": "books_set",
+          "relationship": "HasMany",
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "editors",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "id",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is greater than",
+              "message": "Ensure this value is greater than or equal to -9223372036854775808 characters",
+              "value": -9223372036854775808
+            },
+            {
+              "type": "is less than",
+              "message": "Ensure this value is less than or equal to 9223372036854775807 characters",
+              "value": 9223372036854775807
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "name",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 255 characters",
+              "value": 255
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "created_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "updated_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "book",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "books.id",
+          "inverse_of": "editors",
+          "relationship": "HasOne",
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "comments",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "id",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is greater than",
+              "message": "Ensure this value is greater than or equal to -9223372036854775808 characters",
+              "value": -9223372036854775808
+            },
+            {
+              "type": "is less than",
+              "message": "Ensure this value is less than or equal to 9223372036854775807 characters",
+              "value": 9223372036854775807
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "body",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 255 characters",
+              "value": 255
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "created_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "updated_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "book",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "books.id",
+          "inverse_of": "comments_set",
+          "relationship": "BelongsTo",
+          "widget": null
+        },
+        {
+          "field": "user",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "users.id",
+          "inverse_of": "comments_set",
+          "relationship": "BelongsTo",
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "advertisements",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "id",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is greater than",
+              "message": "Ensure this value is greater than or equal to -9223372036854775808 characters",
+              "value": -9223372036854775808
+            },
+            {
+              "type": "is less than",
+              "message": "Ensure this value is less than or equal to 9223372036854775807 characters",
+              "value": 9223372036854775807
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "label",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 255 characters",
+              "value": 255
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "created_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "updated_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "book",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "books.id",
+          "inverse_of": "advertisements",
+          "relationship": "HasOne",
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "movies",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "id",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is greater than",
+              "message": "Ensure this value is greater than or equal to -9223372036854775808 characters",
+              "value": -9223372036854775808
+            },
+            {
+              "type": "is less than",
+              "message": "Ensure this value is less than or equal to 9223372036854775807 characters",
+              "value": 9223372036854775807
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "body",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 255 characters",
+              "value": 255
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "created_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "updated_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "book",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "books.id",
+          "inverse_of": "movies_set",
+          "relationship": "BelongsTo",
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "comments_set",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "comments.id",
+          "inverse_of": "user",
+          "relationship": "HasMany",
+          "widget": null
+        },
+        {
+          "field": "id",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is greater than",
+              "message": "Ensure this value is greater than or equal to -9223372036854775808 characters",
+              "value": -9223372036854775808
+            },
+            {
+              "type": "is less than",
+              "message": "Ensure this value is less than or equal to 9223372036854775807 characters",
+              "value": 9223372036854775807
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "name",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 255 characters",
+              "value": 255
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "email",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 255 characters",
+              "value": 255
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "email_verified_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "password",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 255 characters",
+              "value": 255
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "remember_token",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 100 characters",
+              "value": 100
+            }
+          ]
+        },
+        {
+          "field": "created_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "updated_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "author",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "authors.id",
+          "inverse_of": "users_set",
+          "relationship": "BelongsTo",
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "authors",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "users_set",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "users.id",
+          "inverse_of": "author",
+          "relationship": "HasMany",
+          "widget": null
+        },
+        {
+          "field": "id",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is greater than",
+              "message": "Ensure this value is greater than or equal to -9223372036854775808 characters",
+              "value": -9223372036854775808
+            },
+            {
+              "type": "is less than",
+              "message": "Ensure this value is less than or equal to 9223372036854775807 characters",
+              "value": 9223372036854775807
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "created_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "updated_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "book",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "books.id",
+          "inverse_of": "authors_set",
+          "relationship": "BelongsTo",
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "bookstores",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "id",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is greater than",
+              "message": "Ensure this value is greater than or equal to -9223372036854775808 characters",
+              "value": -9223372036854775808
+            },
+            {
+              "type": "is less than",
+              "message": "Ensure this value is less than or equal to 9223372036854775807 characters",
+              "value": 9223372036854775807
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "label",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 255 characters",
+              "value": 255
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "created_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "updated_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "company",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "companies.id",
+          "inverse_of": "bookstores_set",
+          "relationship": "BelongsTo",
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "companies",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "bookstores_set",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "bookstores.id",
+          "inverse_of": "company",
+          "relationship": "HasMany",
+          "widget": null
+        },
+        {
+          "field": "id",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is greater than",
+              "message": "Ensure this value is greater than or equal to -9223372036854775808 characters",
+              "value": -9223372036854775808
+            },
+            {
+              "type": "is less than",
+              "message": "Ensure this value is less than or equal to 9223372036854775807 characters",
+              "value": 9223372036854775807
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "name",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 255 characters",
+              "value": 255
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "created_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "updated_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "book",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "books.id",
+          "inverse_of": "companies_set",
+          "relationship": "BelongsTo",
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "buys",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "buyables_set",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "buyables.id",
+          "inverse_of": "buy",
+          "relationship": "HasMany",
+          "widget": null
+        },
+        {
+          "field": "id",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is greater than",
+              "message": "Ensure this value is greater than or equal to -9223372036854775808 characters",
+              "value": -9223372036854775808
+            },
+            {
+              "type": "is less than",
+              "message": "Ensure this value is less than or equal to 9223372036854775807 characters",
+              "value": 9223372036854775807
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "name",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 255 characters",
+              "value": 255
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "created_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "updated_at",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "buyables",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "id",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is greater than",
+              "message": "Ensure this value is greater than or equal to -9223372036854775808 characters",
+              "value": -9223372036854775808
+            },
+            {
+              "type": "is less than",
+              "message": "Ensure this value is less than or equal to 9223372036854775807 characters",
+              "value": 9223372036854775807
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "buyable_id",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is greater than",
+              "message": "Ensure this value is greater than or equal to -2147483648 characters",
+              "value": -2147483648
+            },
+            {
+              "type": "is less than",
+              "message": "Ensure this value is less than or equal to 2147483647 characters",
+              "value": 2147483647
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "buyable_type",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 255 characters",
+              "value": 255
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "buy",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "buys.id",
+          "inverse_of": "buyables_set",
+          "relationship": "BelongsTo",
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "auth_permission",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "group_set",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "auth_group.id",
+          "inverse_of": "permissions",
+          "relationship": "HasMany",
+          "widget": null
+        },
+        {
+          "field": "user_set",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "auth_user.id",
+          "inverse_of": "user_permissions",
+          "relationship": "HasMany",
+          "widget": null
+        },
+        {
+          "field": "id",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "name",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 255 characters",
+              "value": 255
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "content_type",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "django_content_type.id",
+          "inverse_of": "permission_set",
+          "relationship": "BelongsTo",
+          "widget": null
+        },
+        {
+          "field": "codename",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 100 characters",
+              "value": 100
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "auth_group_permissions",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "id",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "group",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "auth_group.id",
+          "inverse_of": "Group_permissions+",
+          "relationship": "BelongsTo",
+          "widget": null
+        },
+        {
+          "field": "permission",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "auth_permission.id",
+          "inverse_of": "Group_permissions+",
+          "relationship": "BelongsTo",
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "auth_group",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "user_set",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "auth_user.id",
+          "inverse_of": "groups",
+          "relationship": "HasMany",
+          "widget": null
+        },
+        {
+          "field": "id",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "name",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 150 characters",
+              "value": 150
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "permissions",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "auth_permission.id",
+          "inverse_of": "group_set",
+          "relationship": "HasMany",
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "auth_user_groups",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "id",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "user",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "auth_user.id",
+          "inverse_of": "User_groups+",
+          "relationship": "BelongsTo",
+          "widget": null
+        },
+        {
+          "field": "group",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "auth_group.id",
+          "inverse_of": "User_groups+",
+          "relationship": "BelongsTo",
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "auth_user_user_permissions",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "id",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "user",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "auth_user.id",
+          "inverse_of": "User_user_permissions+",
+          "relationship": "BelongsTo",
+          "widget": null
+        },
+        {
+          "field": "permission",
+          "type": "Number",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "auth_permission.id",
+          "inverse_of": "User_user_permissions+",
+          "relationship": "BelongsTo",
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "auth_user",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "id",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "password",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 128 characters",
+              "value": 128
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "last_login",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "is_superuser",
+          "type": "Boolean",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": false,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "username",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is like",
+              "message": "Ensure this value match your pattern",
+              "value": "^[\\w.@+-]+\\Z"
+            },
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 150 characters",
+              "value": 150
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "first_name",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 150 characters",
+              "value": 150
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "last_name",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 150 characters",
+              "value": 150
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "email",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 254 characters",
+              "value": 254
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "is_staff",
+          "type": "Boolean",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": false,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "is_active",
+          "type": "Boolean",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": true,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "date_joined",
+          "type": "Date",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "groups",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "auth_group.id",
+          "inverse_of": "user_set",
+          "relationship": "HasMany",
+          "widget": null
+        },
+        {
+          "field": "user_permissions",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "auth_permission.id",
+          "inverse_of": "user_set",
+          "relationship": "HasMany",
+          "widget": null
+        }
+      ]
+    },
+    {
+      "name": "django_content_type",
+      "is_virtual": false,
+      "icon": null,
+      "is_read_only": false,
+      "is_searchable": true,
+      "only_for_relationships": false,
+      "pagination_type": "page",
+      "search_fields": null,
+      "actions": [],
+      "segments": [],
+      "fields": [
+        {
+          "field": "permission_set",
+          "type": [
+            "Number"
+          ],
+          "is_filterable": false,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": "auth_permission.id",
+          "inverse_of": "content_type",
+          "relationship": "HasMany",
+          "widget": null
+        },
+        {
+          "field": "id",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null
+        },
+        {
+          "field": "app_label",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 100 characters",
+              "value": 100
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        },
+        {
+          "field": "model",
+          "type": "String",
+          "is_filterable": true,
+          "is_sortable": true,
+          "is_read_only": false,
+          "is_required": false,
+          "is_virtual": false,
+          "default_value": null,
+          "integration": null,
+          "reference": null,
+          "inverse_of": null,
+          "relationship": null,
+          "widget": null,
+          "validations": [
+            {
+              "type": "is shorter than",
+              "message": "Ensure this value has at most 100 characters",
+              "value": 100
+            },
+            {
+              "type": "is present",
+              "message": "Ensure this value is not null or not empty"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "liana": "django-forestadmin",
+    "liana_version": "1.4.7",
+    "stack": {
+      "database_type": "postgresql",
+      "orm_version": "4.2"
+    }
+  }
+}
