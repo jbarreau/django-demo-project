@@ -253,7 +253,7 @@ class Sequels(models.Model):
         db_table = 'sequels'
 
 
-# #####" dunno
+# ###### dunno
 
 class Images(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -270,50 +270,50 @@ class Images(models.Model):
 
 
 # #######  laravel framework related
-# class PasswordResets(models.Model):
-#     email = models.CharField(max_length=255)
-#     token = models.CharField(max_length=255)
-#     created_at = models.DateTimeField(blank=True, null=True)
+class PasswordResets(models.Model):
+    email = models.CharField(max_length=255)
+    token = models.CharField(max_length=255)
+    created_at = models.DateTimeField(blank=True, null=True)
 
-#     class Meta:
-#         managed = settings.MANAGE_MODELS
-#         db_table = 'password_resets'
-
-
-# class PersonalAccessTokens(models.Model):
-#     id = models.BigAutoField(primary_key=True)
-#     tokenable_type = models.CharField(max_length=255)
-#     tokenable_id = models.BigIntegerField()
-#     name = models.CharField(max_length=255)
-#     token = models.CharField(unique=True, max_length=64)
-#     abilities = models.TextField(blank=True, null=True)
-#     last_used_at = models.DateTimeField(blank=True, null=True)
-#     created_at = models.DateTimeField(blank=True, null=True)
-#     updated_at = models.DateTimeField(blank=True, null=True)
-
-#     class Meta:
-#         managed = settings.MANAGE_MODELS
-#         db_table = 'personal_access_tokens'
+    class Meta:
+        managed = settings.MANAGE_MODELS
+        db_table = 'password_resets'
 
 
-# class Migrations(models.Model):
-#     migration = models.CharField(max_length=255)
-#     batch = models.IntegerField()
+class PersonalAccessTokens(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    tokenable_type = models.CharField(max_length=255)
+    tokenable_id = models.BigIntegerField()
+    name = models.CharField(max_length=255)
+    token = models.CharField(unique=True, max_length=64)
+    abilities = models.TextField(blank=True, null=True)
+    last_used_at = models.DateTimeField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
 
-#     class Meta:
-#         managed = settings.MANAGE_MODELS
-#         db_table = 'migrations'
+    class Meta:
+        managed = settings.MANAGE_MODELS
+        db_table = 'personal_access_tokens'
 
 
-# class FailedJobs(models.Model):
-#     id = models.BigAutoField(primary_key=True)
-#     uuid = models.CharField(unique=True, max_length=255)
-#     connection = models.TextField()
-#     queue = models.TextField()
-#     payload = models.TextField()
-#     exception = models.TextField()
-#     failed_at = models.DateTimeField()
+class Migrations(models.Model):
+    migration = models.CharField(max_length=255)
+    batch = models.IntegerField()
 
-#     class Meta:
-#         managed = settings.MANAGE_MODELS
-#         db_table = 'failed_jobs'
+    class Meta:
+        managed = settings.MANAGE_MODELS
+        db_table = 'migrations'
+
+
+class FailedJobs(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    uuid = models.CharField(unique=True, max_length=255)
+    connection = models.TextField()
+    queue = models.TextField()
+    payload = models.TextField()
+    exception = models.TextField()
+    failed_at = models.DateTimeField()
+
+    class Meta:
+        managed = settings.MANAGE_MODELS
+        db_table = 'failed_jobs'

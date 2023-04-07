@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
+from distutils.util import strtobool
 
 from dotenv import load_dotenv
 
@@ -25,7 +26,7 @@ load_dotenv()
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-tadidada-tadadada-tadidadada-tatatata')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "True").lower() == "true"
+DEBUG = strtobool(os.environ.get("DEBUG", "True"))
 
 ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST', '*')]
 
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django_forest',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django_extensions',
     # we don't need theses one for demo
     # 'django.contrib.admin',
     # 'django.contrib.sessions',
@@ -81,10 +83,10 @@ FOREST_IGNORE_DJANGO_MODELS = [
     'auth_user_user_permissions',
     'auth_group_permissions',
     'auth_permission',
-    'Permission',
+    # 'Permission',
     'django_content_type',
 ]
-FOREST_IGNORE_RAILS_MODELS = [
+FOREST_IGNORE_LARAVEL_MODELS = [
     'failed_jobs',
     'migrations',
     'personal_access_tokens',
@@ -96,7 +98,7 @@ FOREST = {
     'FOREST_URL': os.environ.get("FOREST_URL", "https://api.development.forestadmin.com"),
     'FOREST_ENV_SECRET': os.environ.get('FOREST_ENV_SECRET', '8e9ceb3e6476e84fd49a7ce46a26e519662417b2017a9b4f693e33ef0dac2950'),
     'FOREST_AUTH_SECRET': os.environ.get('FOREST_AUTH_SECRET', 'f3db1caad65fe3f09f66811cbebb310dd7054307a34c1774'),
-    'EXCLUDED_MODELS': FOREST_IGNORE_DJANGO_MODELS + FOREST_IGNORE_RAILS_MODELS,
+    'EXCLUDED_MODELS': FOREST_IGNORE_DJANGO_MODELS + FOREST_IGNORE_LARAVEL_MODELS,
 }
 APPEND_SLASH=False
 
@@ -115,7 +117,7 @@ DATABASES = {
     },
 }
 
-MANAGE_MODELS=os.environ.get('MANAGE_MODELS', 'False').lower() == 'true'
+MANAGE_MODELS=strtobool(os.environ.get('MANAGE_MODELS', 'False'))
 
 
 # Password validation

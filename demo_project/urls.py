@@ -19,6 +19,8 @@ from django.conf.urls import include
 # from django.contrib import admin
 
 urlpatterns = [
+    path('forest', include('library.urls')),
     path('forest', include('django_forest.urls')),
+    # path('', include('library.urls')),
     # path('admin/', admin.site.urls), # nope, we disabled the app
 ]

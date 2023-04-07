@@ -1,6 +1,7 @@
 django
 psycopg2
 python-dotenv
+django-extensions
 
 # django-forestadmin
 /Users/julien/git/django-forestadmin
