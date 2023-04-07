@@ -206,69 +206,70 @@ class Buyables(models.Model):
 # see later :
 
 
-# class Products(models.Model):
-#     id = models.BigAutoField(primary_key=True)
-#     label = models.CharField(max_length=255)
-#     price = models.DecimalField(max_digits=8, decimal_places=2)
-#     token = models.UUIDField(blank=True, null=True)
-#     delivery_date = models.DateField(blank=True, null=True)
-#     delivery_hour = models.TimeField(blank=True, null=True)
-#     created_at = models.DateTimeField(blank=True, null=True)
-#     updated_at = models.DateTimeField(blank=True, null=True)
+class Products(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    label = models.CharField(max_length=255)
+    price = models.DecimalField(max_digits=8, decimal_places=2)
+    token = models.UUIDField(blank=True, null=True)
+    delivery_date = models.DateField(blank=True, null=True)
+    delivery_hour = models.TimeField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
 
-#     user = models.ForeignKey('Users', models.DO_NOTHING)
+    user = models.ForeignKey('Users', models.DO_NOTHING)
 
-#     class Meta:
-#         managed = settings.MANAGE_MODELS
-#         db_table = 'products'
-
-
-# class Tags(models.Model):
-#     id = models.BigAutoField(primary_key=True)
-#     label = models.CharField(max_length=255)
-#     created_at = models.DateTimeField(blank=True, null=True)
-#     updated_at = models.DateTimeField(blank=True, null=True)
-
-#     # polymorph foreign key
-#     taggable_type = models.CharField(max_length=255)
-#     taggable_id = models.BigIntegerField()
-
-#     class Meta:
-#         managed = settings.MANAGE_MODELS
-#         db_table = 'tags'
+    class Meta:
+        managed = settings.MANAGE_MODELS
+        db_table = 'products'
 
 
-# class Sequels(models.Model):
-#     id = models.BigAutoField(primary_key=True)
-#     label = models.CharField(max_length=255)
-#     created_at = models.DateTimeField(blank=True, null=True)
-#     updated_at = models.DateTimeField(blank=True, null=True)
+class Tags(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    label = models.CharField(max_length=255)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
 
-#     # polymorph foreign key
-#     sequelable_type = models.CharField(max_length=255, blank=True, null=True)
-#     sequelable_id = models.BigIntegerField(blank=True, null=True)
+    # polymorph foreign key
+    taggable_type = models.CharField(max_length=255)
+    taggable_id = models.BigIntegerField()
 
-#     class Meta:
-#         managed = settings.MANAGE_MODELS
-#         db_table = 'sequels'
-
-
-# # #####" dunno
-
-# class Images(models.Model):
-#     id = models.BigAutoField(primary_key=True)
-#     name = models.CharField(max_length=255)
-#     url = models.CharField(max_length=255)
-#     imageable_type = models.CharField(max_length=255)
-#     imageable_id = models.BigIntegerField()
-#     created_at = models.DateTimeField(blank=True, null=True)
-#     updated_at = models.DateTimeField(blank=True, null=True)
-
-#     class Meta:
-#         managed = settings.MANAGE_MODELS
-#         db_table = 'images'
+    class Meta:
+        managed = settings.MANAGE_MODELS
+        db_table = 'tags'
 
 
+class Sequels(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    label = models.CharField(max_length=255)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    # polymorph foreign key
+    sequelable_type = models.CharField(max_length=255, blank=True, null=True)
+    sequelable_id = models.BigIntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = settings.MANAGE_MODELS
+        db_table = 'sequels'
+
+
+# #####" dunno
+
+class Images(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    url = models.CharField(max_length=255)
+    imageable_type = models.CharField(max_length=255)
+    imageable_id = models.BigIntegerField()
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = settings.MANAGE_MODELS
+        db_table = 'images'
+
+
+# #######  laravel framework related
 # class PasswordResets(models.Model):
 #     email = models.CharField(max_length=255)
 #     token = models.CharField(max_length=255)

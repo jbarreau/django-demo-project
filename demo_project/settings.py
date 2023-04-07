@@ -74,10 +74,29 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'demo_project.wsgi.application'
 
+FOREST_IGNORE_DJANGO_MODELS = [
+    'auth_group',
+    'auth_user_groups',
+    'auth_user',
+    'auth_user_user_permissions',
+    'auth_group_permissions',
+    'auth_permission',
+    'Permission',
+    'django_content_type',
+]
+FOREST_IGNORE_RAILS_MODELS = [
+    'failed_jobs',
+    'migrations',
+    'personal_access_tokens',
+    'password_resets',
+    # 'users',
+]
+
 FOREST = {
-   'FOREST_URL': os.environ.get("FOREST_URL", "https://api.development.forestadmin.com"),
-   'FOREST_ENV_SECRET': os.environ.get('FOREST_ENV_SECRET', '8e9ceb3e6476e84fd49a7ce46a26e519662417b2017a9b4f693e33ef0dac2950'),
-   'FOREST_AUTH_SECRET': os.environ.get('FOREST_AUTH_SECRET', 'f3db1caad65fe3f09f66811cbebb310dd7054307a34c1774')
+    'FOREST_URL': os.environ.get("FOREST_URL", "https://api.development.forestadmin.com"),
+    'FOREST_ENV_SECRET': os.environ.get('FOREST_ENV_SECRET', '8e9ceb3e6476e84fd49a7ce46a26e519662417b2017a9b4f693e33ef0dac2950'),
+    'FOREST_AUTH_SECRET': os.environ.get('FOREST_AUTH_SECRET', 'f3db1caad65fe3f09f66811cbebb310dd7054307a34c1774'),
+    'EXCLUDED_MODELS': FOREST_IGNORE_DJANGO_MODELS + FOREST_IGNORE_RAILS_MODELS,
 }
 APPEND_SLASH=False
 
