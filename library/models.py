@@ -53,7 +53,7 @@ class Books(models.Model):
     created_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True)
 
-    category = models.ForeignKey('Categories', models.CASCADE)
+    category = models.ForeignKey('Categories', models.CASCADE, related_name="books")
     ranges = models.ManyToManyField('Ranges', through="BookRange")
 
     class Meta:
@@ -77,8 +77,8 @@ class Editors(models.Model):
 class Comments(models.Model):
     id = models.BigAutoField(primary_key=True)
     body = models.CharField(max_length=255)
-    created_at = models.DateTimeField(blank=True, null=True)
-    updated_at = models.DateTimeField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True, auto_created=True)
+    updated_at = models.DateTimeField(blank=True, null=True, auto_now=True)
 
     book = models.ForeignKey('Books', models.CASCADE)
     user = models.ForeignKey('Users', models.CASCADE)
@@ -107,7 +107,7 @@ class Movies(models.Model):
     created_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True)
 
-    book = models.ForeignKey(Books, models.SET_NULL, blank=True, null=True)
+    book = models.ForeignKey(Books, models.SET_NULL, blank=True, null=True, related_name="movies")
 
     class Meta:
         managed = settings.MANAGE_MODELS
@@ -155,7 +155,7 @@ class Bookstores(models.Model):
     created_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True)
 
-    company = models.ForeignKey('Companies', models.DO_NOTHING)
+    company = models.ForeignKey('Companies', models.DO_NOTHING, related_name="bookstores")
 
     class Meta:
         managed = settings.MANAGE_MODELS
@@ -168,7 +168,7 @@ class Companies(models.Model):
     created_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True)
 
-    book = models.ForeignKey('Books', models.CASCADE)
+    book = models.ForeignKey('Books', models.CASCADE, related_name="companies")
 
     class Meta:
         managed = settings.MANAGE_MODELS

@@ -76,6 +76,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'demo_project.wsgi.application'
 
+# TEST on CORS
+# CORS_ALLOW_HEADERS = []
+# CORS_ALLOWED_ORIGIN_REGEXES = [
+#     "http://localhost:8002"
+# ]
+
 FOREST_IGNORE_DJANGO_MODELS = [
     'auth_group',
     'auth_user_groups',
@@ -99,7 +105,9 @@ FOREST = {
     'FOREST_ENV_SECRET': os.environ.get('FOREST_ENV_SECRET', '8e9ceb3e6476e84fd49a7ce46a26e519662417b2017a9b4f693e33ef0dac2950'),
     'FOREST_AUTH_SECRET': os.environ.get('FOREST_AUTH_SECRET', 'f3db1caad65fe3f09f66811cbebb310dd7054307a34c1774'),
     'EXCLUDED_MODELS': FOREST_IGNORE_DJANGO_MODELS + FOREST_IGNORE_LARAVEL_MODELS,
+    'NODE_TLS_REJECT_UNAUTHORIZED': 0
 }
+
 APPEND_SLASH=False
 
 
