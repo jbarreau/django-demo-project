@@ -1,5 +1,6 @@
 from django.urls import path
 from django.views.decorators.csrf import csrf_exempt
+from django.conf.urls import include
 
 from . import views
 
@@ -40,4 +41,6 @@ urlpatterns = [
     path("/products", csrf_exempt(views.ProductsView.as_view()), name="products"),
     path('/actions/smartactionhook', csrf_exempt(views.ProductSmartActionHook.as_view()), name='smartactionhook'),
     path('/actions/smartactionhookload', csrf_exempt(views.ProductSmartActionHookLoad.as_view()), name='smartactionhookload'),
+
+    path("/charts", include("library.charts.urls")),
 ]
