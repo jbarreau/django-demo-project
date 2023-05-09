@@ -43,4 +43,6 @@ urlpatterns = [
     path('/actions/smartactionhookload', csrf_exempt(views.ProductSmartActionHookLoad.as_view()), name='smartactionhookload'),
 
     path("/charts", include("library.charts.urls")),
+
+    path('/CustomerStat', csrf_exempt(views.CustomerStatsView.as_view()), name='customer-stats'),
 ]

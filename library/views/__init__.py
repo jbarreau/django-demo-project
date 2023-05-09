@@ -8,3 +8,6 @@ from .books import (
     SmartBookStoreView,
 )
 from .products import ProductsView, ProductSmartActionHook, ProductSmartActionHookLoad
+
+
+from .customer_stat_view import CustomerStatsView
