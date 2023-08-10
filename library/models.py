@@ -8,15 +8,31 @@
 from django.db import models
 from django.conf import settings
 
-class Categories(models.Model):
+
+class CategoriesLinked(models.Model):
     id = models.BigAutoField(primary_key=True)
     label = models.CharField(max_length=255)
     created_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        managed = settings.MANAGE_MODELS
-        db_table = 'categories'
+        managed = True
+        db_table = "categories_linked"
+
+
+class Categories(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    label = models.CharField(max_length=255)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+    category_linked = models.OneToOneField(
+        CategoriesLinked, models.CASCADE, blank=True, null=True
+    )
+
+    class Meta:
+        managed = True
+        # managed = settings.MANAGE_MODELS
+        db_table = "categories"
 
 
 class Ranges(models.Model):
@@ -27,18 +43,18 @@ class Ranges(models.Model):
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'ranges'
+        db_table = "ranges"
 
 
 class BookRange(models.Model):
     id = models.BigAutoField(primary_key=True)
 
-    book = models.ForeignKey('Books', models.CASCADE)
-    range = models.ForeignKey('Ranges', models.CASCADE)
+    book = models.ForeignKey("Books", models.CASCADE)
+    range = models.ForeignKey("Ranges", models.CASCADE)
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'book_range'
+        db_table = "book_range"
 
 
 class Books(models.Model):
@@ -50,15 +66,16 @@ class Books(models.Model):
     active = models.BooleanField()
     options = models.JSONField()
     other = models.CharField(max_length=255)
-    created_at = models.DateTimeField(blank=True, null=True)
-    updated_at = models.DateTimeField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True, auto_now_add=True)
+    updated_at = models.DateTimeField(blank=True, null=True, auto_now=True)
 
-    category = models.ForeignKey('Categories', models.CASCADE, related_name="books")
-    ranges = models.ManyToManyField('Ranges', through="BookRange")
+    category = models.ForeignKey("Categories", models.CASCADE, related_name="books")
+    ranges = models.ManyToManyField("Ranges", through="BookRange")
+    # ranges = models.ManyToManyField("Ranges")
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'books'
+        db_table = "books"
 
 
 class Editors(models.Model):
@@ -67,11 +84,11 @@ class Editors(models.Model):
     created_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True)
 
-    book = models.OneToOneField('Books', models.CASCADE)
+    book = models.OneToOneField("Books", models.CASCADE)
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'editors'
+        db_table = "editors"
 
 
 class Comments(models.Model):
@@ -80,12 +97,12 @@ class Comments(models.Model):
     created_at = models.DateTimeField(blank=True, null=True, auto_created=True)
     updated_at = models.DateTimeField(blank=True, null=True, auto_now=True)
 
-    book = models.ForeignKey('Books', models.CASCADE)
-    user = models.ForeignKey('Users', models.CASCADE)
+    book = models.ForeignKey("Books", models.CASCADE)
+    user = models.ForeignKey("Users", models.CASCADE)
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'comments'
+        db_table = "comments"
 
 
 class Advertisements(models.Model):
@@ -94,11 +111,11 @@ class Advertisements(models.Model):
     created_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True)
 
-    book = models.OneToOneField('Books', models.CASCADE)
+    book = models.OneToOneField("Books", models.CASCADE)
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'advertisements'
+        db_table = "advertisements"
 
 
 class Movies(models.Model):
@@ -107,11 +124,13 @@ class Movies(models.Model):
     created_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True)
 
-    book = models.ForeignKey(Books, models.SET_NULL, blank=True, null=True, related_name="movies")
+    book = models.ForeignKey(
+        Books, models.SET_NULL, blank=True, null=True, related_name="movies"
+    )
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'movies'
+        db_table = "movies"
 
 
 # ###########
@@ -127,11 +146,11 @@ class Users(models.Model):
     created_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True)
 
-    author = models.ForeignKey('Authors', models.SET_NULL, blank=True, null=True)
+    author = models.ForeignKey("Authors", models.SET_NULL, blank=True, null=True)
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'users'
+        db_table = "users"
 
 
 class Authors(models.Model):
@@ -139,11 +158,11 @@ class Authors(models.Model):
     created_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True)
 
-    book = models.ForeignKey('Books', models.CASCADE)
+    book = models.ForeignKey("Books", models.CASCADE)
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'authors'
+        db_table = "authors"
 
 
 # ###########
@@ -155,11 +174,13 @@ class Bookstores(models.Model):
     created_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True)
 
-    company = models.ForeignKey('Companies', models.DO_NOTHING, related_name="bookstores")
+    company = models.ForeignKey(
+        "Companies", models.DO_NOTHING, related_name="bookstores"
+    )
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'bookstores'
+        db_table = "bookstores"
 
 
 class Companies(models.Model):
@@ -168,11 +189,11 @@ class Companies(models.Model):
     created_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True)
 
-    book = models.ForeignKey('Books', models.CASCADE, related_name="companies")
+    book = models.ForeignKey("Books", models.CASCADE, related_name="companies")
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'companies'
+        db_table = "companies"
 
 
 # ###########
@@ -186,7 +207,7 @@ class Buys(models.Model):
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'buys'
+        db_table = "buys"
 
 
 class Buyables(models.Model):
@@ -196,11 +217,11 @@ class Buyables(models.Model):
     buyable_id = models.IntegerField()
     buyable_type = models.CharField(max_length=255)
 
-    buy = models.ForeignKey('Buys', models.DO_NOTHING)
+    buy = models.ForeignKey("Buys", models.DO_NOTHING)
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'buyables'
+        db_table = "buyables"
 
 
 # see later :
@@ -216,11 +237,11 @@ class Products(models.Model):
     created_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True)
 
-    user = models.ForeignKey('Users', models.DO_NOTHING)
+    user = models.ForeignKey("Users", models.DO_NOTHING)
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'products'
+        db_table = "products"
 
 
 class Tags(models.Model):
@@ -235,7 +256,7 @@ class Tags(models.Model):
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'tags'
+        db_table = "tags"
 
 
 class Sequels(models.Model):
@@ -250,10 +271,11 @@ class Sequels(models.Model):
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'sequels'
+        db_table = "sequels"
 
 
 # ###### dunno
+
 
 class Images(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -266,7 +288,7 @@ class Images(models.Model):
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'images'
+        db_table = "images"
 
 
 # #######  laravel framework related
@@ -277,7 +299,7 @@ class PasswordResets(models.Model):
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'password_resets'
+        db_table = "password_resets"
 
 
 class PersonalAccessTokens(models.Model):
@@ -293,7 +315,7 @@ class PersonalAccessTokens(models.Model):
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'personal_access_tokens'
+        db_table = "personal_access_tokens"
 
 
 class Migrations(models.Model):
@@ -302,7 +324,7 @@ class Migrations(models.Model):
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'migrations'
+        db_table = "migrations"
 
 
 class FailedJobs(models.Model):
@@ -316,4 +338,4 @@ class FailedJobs(models.Model):
 
     class Meta:
         managed = settings.MANAGE_MODELS
-        db_table = 'failed_jobs'
+        db_table = "failed_jobs"

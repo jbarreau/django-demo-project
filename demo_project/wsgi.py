@@ -11,6 +11,8 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 from django_forest import init_forest
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'demo_project.settings')
 

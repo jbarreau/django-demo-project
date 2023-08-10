@@ -7,4 +7,12 @@ from library.forest.user import UserForest
 from library.forest.customer_stat_view import CustomerStat
 
 
-__all__ = [Comics, BookForest, CategoryForest, MovieForest, ProductsForest, UserForest, CustomerStat]
+__all__ = [
+    Comics,
+    BookForest,
+    CategoryForest,
+    MovieForest,
+    ProductsForest,
+    UserForest,
+    CustomerStat
+]

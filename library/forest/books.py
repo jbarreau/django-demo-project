@@ -23,7 +23,15 @@ class BookForest(Collection):
             {
                 "type": "single",
                 "name": "add-comment",
-                "fields": [{"field": "body", "type": "string", "isRequired": True}],
+                "fields": [
+                    {"field": "body", "type": "string", "isRequired": True},
+                    {
+                        "field": "multiple select",
+                        "type": ["Enum"],
+                        "enums": ["1", "2", "3"],
+                        "widget": "checkboxes",
+                    },
+                ],
             },
         ]
 

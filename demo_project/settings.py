@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django_extensions',
+    'corsheaders',
     # we don't need theses one for demo
     # 'django.contrib.admin',
     # 'django.contrib.sessions',
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -78,9 +80,18 @@ WSGI_APPLICATION = 'demo_project.wsgi.application'
 
 # TEST on CORS
 # CORS_ALLOW_HEADERS = []
-# CORS_ALLOWED_ORIGIN_REGEXES = [
-#     "http://localhost:8002"
+# CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGIN_REGEXES = [
+        r'.*\.forestadmin\.com.*',
+#     # r"https:\/\/app\.(development\.)?forestadmin\.com",
+#     r".*\.fffforestadmin\.com$",
+#     # ".*\.forestadmin\.com.*"
+]
+# CORS_ALLOWED_ORIGIN = [
+#     # 'http://localhost',
+#     'http://app.development.forestadmin.com',
 # ]
+CORS_PREFLIGHT_MAX_AGE = 3
 
 FOREST_IGNORE_DJANGO_MODELS = [
     'auth_group',

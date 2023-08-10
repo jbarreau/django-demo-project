@@ -16,8 +16,9 @@ class MovieForest(Collection):
         ]
 
     def book_category(self, obj):
-        cat = obj.book.category
-        return cat
+        if obj.book:
+            return obj.book.category
+        return None
 
 
 Collection.register(MovieForest, Movies)
